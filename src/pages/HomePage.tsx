@@ -5,7 +5,7 @@ import Home from 'containers/Home'
 const HomePage = () => {
 	return (<>
 		<Helmet>
-			<title>APP-NAME</title>
+			<title>Electron Example</title>
 		</Helmet>
 
 		<Home />

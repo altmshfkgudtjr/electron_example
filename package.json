@@ -1,9 +1,25 @@
 {
   "name": "electron-example",
+  "description": "NB electron example project",
+  "author": "NB",
   "version": "1.0.0",
   "private": false,
-  "main": "public/Main.js",
+  "main": "public/electron.js",
   "homepage": "./",
+  "scripts": {
+    "start": "env-cmd -f .env.development .env && react-scripts start",
+    "electron": "SET ELECTRON_START_URL=http://localhost:3000 && electron .",
+    
+    "prebuild": "react-scripts test --watchAll=false",
+    "build": "env-cmd -f .env.production .env && react-scripts build",
+    
+    "deploy:osx": "electron-builder --mac",
+    "deploy:win32": "electron-builder --win --ia32",
+    "deploy:win64": "electron-builder --win --x64",
+    "deploy:win": "yarn deploy:win32 && yarn deploy:win64",
+    
+    "test": "react-scripts test"
+  },
   "dependencies": {
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
@@ -18,14 +34,58 @@
     "styled-components": "^5.2.1",
     "typescript": "^4.1.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "react-start": "BROWSER=none yarn start",
-    "electron-start": "ELECTRON_START_URL=http://0.0.0.0:3000 electron .",
-    "prebuild": "react-scripts test --watchAll=false",
-    "build": "cross-env GENERATE_SOURCEMAP=false env-cmd -f .env && yarn build",
-    "postbuild": "electron-builder build -c.extraMetadata.main=build/Main.js",
-    "test": "react-scripts test"
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "cross-env": "^7.0.3",
+    "electron": "^12.0.0",
+    "electron-builder": "^22.10.5",
+    "env-cmd": "^10.1.0",
+    "react-scripts": "4.0.1"
+  },
+  "build": {
+    "productName": "NB",
+    "appId": "com.nb.electron",
+    "asar": true,
+    "protocols": {
+      "name": "nb_electron",
+      "schemes": [
+        "nb_electron"
+      ]
+    },
+    "mac": {
+      "target": [
+        "default"
+      ],
+      "icon": "build/icons/icon.icns"
+    },
+    "dmg": {
+      "title": "NB",
+      "icon": "build/icons/icon.icns"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "perMachine": true,
+      "language": 1042,
+      "installerIcon": "build/icons/icon.ico",
+      "shortcutName": "NB",
+      "artifactName": "NB ${version}.${ext}",
+      "uninstallDisplayName": "NB"
+    },
+    "directories": {
+      "buildResources": "./build/",
+      "output": "./dist/"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -44,17 +104,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "cross-env": "^7.0.3",
-    "electron": "^12.0.0",
-    "electron-builder": "^22.10.5",
-    "env-cmd": "^10.1.0",
-    "react-scripts": "4.0.1"
   },
   "proxy": "http://localhost:5000"
 }

@@ -6,8 +6,9 @@ function createWindow() {
 	
 	/** 기본 데스크톱 앱 사이즈 설정 */
 	const win = new BrowserWindow({
-			width:1920,
-			height:1080
+			width:1080,
+			height:720,
+			frame: true,
 	});
 
 	/** 시작 URL 또는 파일 */

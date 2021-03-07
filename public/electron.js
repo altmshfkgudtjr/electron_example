@@ -25,11 +25,6 @@ function createWindow() {
 		protocol: 'file:',
 		slashes: true
 	});
-	// const startUrl = url.format({
-	// 	pathname: path.join(__dirname, '/../build/index.html'),
-	// 	protocol: 'file:',
-	// 	slashes: true
-	// });
 	
 	/** 시작 포인트 실행 */
 	win.loadURL(startUrl);

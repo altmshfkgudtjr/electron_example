@@ -25,6 +25,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.7",
+    "electron-is-dev": "^2.0.0",
     "electron-updater": "^4.3.8",
     "immer": "^8.0.0",
     "react": "^17.0.1",

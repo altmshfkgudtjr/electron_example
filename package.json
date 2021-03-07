@@ -2,7 +2,7 @@
   "name": "electron-example",
   "description": "NB electron example project",
   "author": "NB",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "public/electron.js",
   "homepage": ".",

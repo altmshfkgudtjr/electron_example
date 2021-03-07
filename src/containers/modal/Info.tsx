@@ -43,7 +43,7 @@ const Container = styled.div`
 	bottom: 0;
 	margin: auto;
 	width: 100%;
-	max-width: 600px;
+	max-width: 702px;
 	height: 100%;
 	max-height: 400px;
 	background-color: white;

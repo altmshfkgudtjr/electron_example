@@ -5,19 +5,18 @@
   "version": "1.0.0",
   "private": false,
   "main": "public/electron.js",
-  "homepage": "./",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
-    "electron": "cross-env ELECTRON_START_URL=http://localhost:3000 && electron .",
-
+    "electron": "electron .",
+    "electron:window": "SET ELECTRON_START_URL=http://localhost:3000 && yarn electron",
+    "electorn:xos": "ELECTRON_START_URL=http://localhost:3000 && yarn electron",
     "prebuild": "react-scripts test --watchAll=false",
     "build": "react-scripts build",
-    
-    "deploy:osx": "electron-builder --mac",
+    "deploy:xos": "electron-builder --mac",
     "deploy:win32": "electron-builder --win --ia32",
     "deploy:win64": "electron-builder --win --x64",
     "deploy:win": "yarn deploy:win32 && yarn deploy:win64",
-    
     "test": "react-scripts test"
   },
   "dependencies": {
@@ -26,10 +25,10 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.7",
+    "electron-updater": "^4.3.8",
     "immer": "^8.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet-async": "^1.0.6",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1",
     "typescript": "^4.1.3"
@@ -39,7 +38,6 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
-    "cross-env": "^7.0.3",
     "electron": "^12.0.0",
     "electron-builder": "^22.10.5",
     "env-cmd": "^10.1.0",

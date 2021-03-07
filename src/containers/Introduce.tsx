@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <Section>
-			<Title>Hello React-TS-Electron</Title>
+			<Title>Introduce</Title>
 			<Post>This is simple <strong>React Typescript Electron</strong> template!</Post>
 			<Post>Create new your app using this template.</Post>
 			<Version />

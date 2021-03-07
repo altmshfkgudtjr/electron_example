@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async"
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 // lib
@@ -7,10 +6,6 @@ import palette from 'lib/styles/palette'
 
 function NoPage() {
 	return (<>
-		<Helmet>
-			<title>APP-NAME - 404</title>
-		</Helmet>
-
 		<Title>404 Not Found.</Title>
 		<Link to="/">
 			<Btn>Back</Btn>

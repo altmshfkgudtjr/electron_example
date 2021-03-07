@@ -1,6 +1,7 @@
 import { Switch, Route } from 'react-router-dom'
 // Pages
 import HomePage from 'pages/HomePage'
+import IntroducePage from 'pages/IntroducePage'
 import NotFound from 'pages/NotFound'
 // Containers
 import Modal from 'containers/modal'
@@ -10,6 +11,7 @@ const App = () => {
 	return (<>
 		<Switch>
 			<Route path="/" component={HomePage} exact />
+			<Route path="/introduce" component={IntroducePage} exact />
 			<Route path="*" component={NotFound} />
 		</Switch>
 		<Modal /> {/* Modal Position */}

@@ -1,9 +1,9 @@
 // containers
-import Home from 'containers/Home'
+import Introduce from 'containers/Introduce'
 
 const HomePage = () => {
 	return (<>
-		<Home />
+		<Introduce />
 	</>);
 }
 

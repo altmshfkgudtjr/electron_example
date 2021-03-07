@@ -7,11 +7,11 @@
   "main": "public/electron.js",
   "homepage": "./",
   "scripts": {
-    "start": "env-cmd -f .env.development .env && react-scripts start",
-    "electron": "SET ELECTRON_START_URL=http://localhost:3000 && electron .",
-    
+    "start": "react-scripts start",
+    "electron": "cross-env ELECTRON_START_URL=http://localhost:3000 && electron .",
+
     "prebuild": "react-scripts test --watchAll=false",
-    "build": "env-cmd -f .env.production .env && react-scripts build",
+    "build": "react-scripts build",
     
     "deploy:osx": "electron-builder --mac",
     "deploy:win32": "electron-builder --win --ia32",

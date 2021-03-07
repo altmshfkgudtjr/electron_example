@@ -2,7 +2,7 @@
   "name": "electron-example",
   "description": "NB electron example project",
   "author": "NB",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "private": false,
   "main": "public/electron.js",
   "homepage": ".",
@@ -26,6 +26,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.7",
     "electron-is-dev": "^2.0.0",
+    "electron-log": "^4.3.2",
     "electron-updater": "^4.3.8",
     "immer": "^8.0.0",
     "react": "^17.0.1",
@@ -78,7 +79,7 @@
       "language": 1042,
       "installerIcon": "build/icons/icon.ico",
       "shortcutName": "NB",
-      "artifactName": "NB ${version}.${ext}",
+      "artifactName": "NB-${version}.${ext}",
       "uninstallDisplayName": "NB"
     },
     "directories": {

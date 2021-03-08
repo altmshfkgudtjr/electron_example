@@ -21,16 +21,11 @@ function createWindow() {
 	}
 
 	/** 시작 URL 또는 파일 */
-	const startUrl = url.format({
+	const startUrl = process.env.ELECTRON_START_URL || url.format({
 		pathname: path.join(__dirname, '/../build/index.html'),
 		protocol: 'file:',
 		slashes: true
 	});
-	// const startUrl = process.env.ELECTRON_START_URL || url.format({
-	// 	pathname: path.join(__dirname, '/../build/index.html'),
-	// 	protocol: 'file:',
-	// 	slashes: true
-	// });
 	
 	/** 시작 포인트 실행 */
 	win.loadURL(startUrl);
@@ -69,7 +64,6 @@ app.on('ready', () => {
 
 	// 자동 업데이트 등록
 	autoUpdater.checkForUpdates();
-	// autoUpdater.checkForUpdatesAndNotify();
 });
 
 /** [생명주기] 모든 창이 닫히면 자동으로 앱 종료 */

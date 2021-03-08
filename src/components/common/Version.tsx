@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { transition } from 'lib/styles/styles'
 
 const Version = () => {
-  return <Content>v1.0.3</Content>;
+  return <Content>v1.0.4</Content>;
 }
 
 const Content = styled.div`

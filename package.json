@@ -48,12 +48,6 @@
     "productName": "NB",
     "appId": "com.nb.electron",
     "asar": true,
-    "protocols": {
-      "name": "nb_electron",
-      "schemes": [
-        "nb_electron"
-      ]
-    },
     "mac": {
       "target": [
         "default"
